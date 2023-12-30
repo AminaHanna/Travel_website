@@ -1,0 +1,167 @@
+.main{
+    width: 100%;
+
+    .secTitle{
+        .title{
+            position: relative;
+            width: max-content;
+            color: rgb(55, 85, 119);
+            margin: 1rem 0;
+            z-index: 2;
+
+            &::after{
+                position: absolute;
+                content: '';
+                background-color: rgb(66, 63, 59);
+                height: 5px;
+                width: 120px;
+                right: 0;
+                bottom: 5px;
+                z-index: -1;
+            }
+        }
+    }
+
+    .secContent{
+        justify-content: center;
+        gap: 1.5rem;
+
+        .singleDestination{
+            height: 100%;
+            display: grid;
+            row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0 2px 4px black;
+            overflow: hidden;
+
+            &:hover{
+                background-color: rgb(208, 203, 203);
+                box-shadow: 0 2px 4px rgb(83, 80, 80);
+                transition: .3s ease;
+            }
+
+            .imageDiv{
+                height: 280px;
+                /* height: 180px; */
+                width: 100%;
+                overflow: hidden;
+
+                .img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: 2s ease;
+                }
+                &:hover{
+                    .img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .cardInfo{
+                padding: 1rem;
+
+                .destTitle{
+                    color: rgb(6, 67, 95);
+                    font-size: 1.25rem;
+                }
+                .continent{
+                    gap: .5rem;
+
+                    .icon{
+                        color: black;
+                        font-size: 18px;
+                    }
+                    .name{
+                        color: rgb(19, 103, 172);
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+                }
+
+                .fees{
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                    border-top: 1.5px solid black;
+                    border-bottom: 1.5px solid black;
+
+                    .grade{
+                        color: rgb(104, 97, 97);
+                        max-width: 100px;
+                        line-height: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .small{
+                            text-align: center;
+                            background-color: black;
+                            border-radius: 1rem;
+                            color: white;
+                            padding: 1px 10px;
+                            font-size: 10px;
+                        }
+                    }
+
+                    .price{
+                        font-size: 2rem;
+                        color: black;
+                    }
+                }
+
+                .desc{
+                    font-size: 13.5px;
+                    color: black;
+                    font-weight: 500;
+                }
+
+                .btn{
+                    margin-top: 1rem;
+                    color: white;
+                    font-weight: 600;
+                    justify-content: space-between;
+                    gap: .5rem;
+
+                    .icon{
+                        align-items: center;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* media queries */
+@media screen and (min-width:500px){
+    .title{
+        font-size: 2.5rem;
+        &::after{
+            width: 155px;
+        }
+    }
+
+    .secContent{
+        grid-template-columns: repeat(2,1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
+
+@media screen and (min-width:840px){
+    .secContent{
+        grid-template-columns: repeat(3,1fr);
+
+        .singleDestination{
+            height: auto;
+        }
+    }
+}
